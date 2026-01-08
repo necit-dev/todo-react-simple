@@ -1,0 +1,65 @@
+@use "../../../scss/vars";
+
+.todoItem {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	-webkit-column-gap: 12px;
+	-moz-column-gap: 12px;
+	column-gap: 12px;
+	background-color: vars.$grey;
+	padding: 16px;
+	border-radius: 8px;
+	border: 1px solid vars.$grey-border;
+	align-items: flex-start;
+}
+
+.todoItem__text {
+	flex: 1;
+	color: #F2F2F2;
+	transition: color .2s ease;
+	word-break: break-word;
+	&_crossed {
+		color: #808080;
+		text-decoration: line-through;
+	}
+}
+
+.todoItem__edit {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	transition: background-color .2s ease;
+	background-color: transparent;
+	border-radius: 4px;
+	padding-left: 3px;
+	g {
+		transition: fill .2s ease;
+	}
+	&:hover {
+		background-color: vars.$grey-border;
+		g {
+			fill: #4ea8de;
+		}
+	}
+}
+
+
+.todoItem__trash {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	transition: background-color .2s ease;
+	background-color: transparent;
+	border-radius: 4px;
+	g {
+		transition: fill .2s ease;
+	}
+	&:hover {
+		background-color: vars.$grey-border;
+		g	{
+			fill: #E25858;
+		}
+	}
+}
+

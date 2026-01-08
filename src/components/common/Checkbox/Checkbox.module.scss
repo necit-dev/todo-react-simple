@@ -1,0 +1,69 @@
+@use "../../../scss/vars";
+
+.checkbox {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	label {
+		display: flex;
+		width: 100%;
+	}
+}
+
+.checkbox__real {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.checkbox__real:focus + .checkbox__custom {
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox__custom {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 2px solid vars.$primary;
+	border-radius: 50%;
+	margin-right: 5px;
+	vertical-align: sub;
+	transition: background-color .2s ease, border .2s ease;
+	position: relative;
+	&:hover {
+		background-color: rgba(vars.$primary-dark, 0.2);
+		border: 2px solid vars.$primary-dark;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		display: inline-block;
+		width: 28px;
+		height: 28px;
+		background-image: url("../../../img/tick.svg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		-webkit-background-size: contain;
+		background-size: contain;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		transition: opacity .2s ease;
+	}
+}
+
+.checkbox__real:checked +.checkbox__custom {
+	background-color: vars.$secondary;
+	border: 2px solid vars.$secondary;
+	&:hover {
+		background-color: vars.$secondary-light;
+		border: 2px solid vars.$secondary-light;
+	}
+	&::before {
+		opacity: 1;
+	}
+}

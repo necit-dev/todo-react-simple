@@ -1,0 +1,65 @@
+@use "sass:color";
+
+@use "../../../scss/vars";
+
+.inputTodo {
+	display: flex;
+	align-items: center;
+	-webkit-column-gap: 8px;
+	-moz-column-gap: 8px;
+	column-gap: 8px;
+
+	margin-bottom: 64px;
+	@media(max-width: 450px) {
+		flex-direction: column;
+		gap: 16px;
+	}
+}
+
+.inputTodo__input {
+	border: 1px solid #0D0D0D;
+	background-color: vars.$grey;
+	padding: 15px;
+
+	font-size: 16px;
+	line-height: 22px;
+	border-radius: 8px;
+	flex: 1;
+	transition: background-color 0.2s ease;
+	&::placeholder {
+		user-select: none;
+	}
+	&:focus {
+		background-color: color.adjust(#262626, $lightness: 8%);
+	}
+	@media(max-width: 450px) {
+		width: 100%;
+		margin: 0 64px;
+	}
+}
+
+.inputTodo__btn {
+	display: flex;
+	align-items: center;
+	-webkit-column-gap: 8px;
+	-moz-column-gap: 8px;
+	column-gap: 8px;
+	line-height: 20px;
+
+	padding: 16px;
+	border-radius: 8px;
+	background-color: vars.$primary-dark;
+	transition: background-color 0.2s ease;
+	&_plus {
+		font-size: 24px;
+	}
+	&:hover {
+		background-color: vars.$primary;
+	}
+
+	@media(max-width: 450px) {
+		width: 100%;
+		justify-content: center;
+	}
+
+}

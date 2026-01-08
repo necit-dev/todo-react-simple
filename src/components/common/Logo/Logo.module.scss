@@ -1,0 +1,26 @@
+@use "../../../scss/vars";
+
+.logo {
+	display: flex;
+	-webkit-column-gap: 12px;
+	-moz-column-gap: 12px;
+	column-gap: 12px;
+	align-items: center;
+}
+
+.logo__text {
+	font-size: 40px;
+	font-weight: 900;
+	line-height: 48px;
+	margin-bottom: 3px;
+
+	&_primary {
+		color: vars.$primary;
+	}
+	&_secondary {
+		color: vars.$secondary;
+	}
+	@media(max-width: 450px) {
+		font-size: 32px;
+	}
+}
