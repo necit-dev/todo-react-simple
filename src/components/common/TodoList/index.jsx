@@ -39,7 +39,7 @@ const TodoList = ({todoList, handleChange, handleDelete, handleDeleteCompleted})
 				<button
 					className={styles.todoList__btn}
 					onClick={handleDeleteCompleted}
-				>Удалить выполеннные</button>
+				>Удалить выполненные</button>
 				}
 
 			</div>
